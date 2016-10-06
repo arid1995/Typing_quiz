@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>
+    Quiz app
+  </title>
+</head>
+<body>
+  Версия 0.0.1
+  <script src="main.js"></script>
+  <a href="new_word.html">Новое слово</a>
+
+  <script type="text/javascript">
+    document.word.innerHTML = currentWord;
+  </script>
+
+  <h1 id="word"></h1>
+  <form method="post" action="/newword">
+    <input type="text" name="translation">
+    <button name="submit" onclick="sendRequest()">Сохранить</button>
+</body>
+</html>
