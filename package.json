@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "mysql": "^0.4.2",
+    "mysql": "^2.11.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0"
   }

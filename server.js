@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
-const formidable = require('formidable');
 const bodyParser = require('body-parser');
 let currentWord = ""
 let currentTranslation = "";
