@@ -5,17 +5,25 @@
   </title>
 </head>
 <body>
-  Версия 0.0.1
+  Версия 0.0.2
   <script src="main.js"></script>
   <a href="new_word.html">Новое слово</a>
 
-  <script type="text/javascript">
-    document.word.innerHTML = currentWord;
-  </script>
-
   <h1 id="word"></h1>
-  <form method="post" action="/newword">
-    <input type="text" name="translation">
-    <button name="submit" onclick="sendRequest()">Сохранить</button>
+  <script type="text/javascript">
+    document.getElementById('word').innerHTML = loadWord();
+  </script>
+  <form method="post" action="/newword" id="checkForm">
+    <input type="text" name="translation" id="translation">
+    <button name="submit" onclick="">Сохранить</button>
+
+  <h1 id="answer"></h1>
+  <script>
+    document.getElementById('checkForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      let answer = checkAnswer(document.getElementById('translation').value);
+      document.getElementById('answer').innerHTML = answer;
+    });
+  </script>
 </body>
 </html>

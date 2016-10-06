@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-let currentWord = ""
-let currentTranslation = "";
+var currentWord = ""
+var currentTranslation = "";
 
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
@@ -17,36 +17,36 @@ const pool = mysql.createPool({
   database : 'heroku_5e754667688fa3a'
 });
 
-
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`App started on port ${process.env.PORT || 3000}`);
-
+function loadRandomWord() {
   pool.getConnection((err, connection) => {
     if(err) {
       console.log(err);
     }
 
-    let maxId = 0;
+    var maxId = 0;
     connection.query('SELECT MAX(words.wordId) AS mid FROM words', (err, rows) => {
-                        console.log(err)
                         maxId = rows[0].mid
                         maxId /= 10;
+                        const currentId = Math.floor((Math.random() * maxId)) * 10 + 2;
+                        console.log(currentId);
+
+                        connection.query('SELECT words.word, words.translation FROM words WHERE words.wordId=' + currentId, (err, rows) => {
+                                            if(!rows[0]) return;
+                                            currentWord = rows[0].word;
+                                            currentTranslation = rows[0].translation;
+                                            console.log(currentTranslation);
+                                            connection.release();
+                                            return currentWord;
+                                          });
+                        });
                       });
+}
 
-    const currentId = Math.floor((Math.random() * maxId)) * 10 + 2;
 
-    console.log(currentId);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`App started on port ${process.env.PORT || 3000}`);
 
-    connection.query('SELECT words.word, words.translation FROM words WHERE words.wordId=' + currentId, (err, rows) => {
-                        console.log(err)
-                        currentWord = rows[0].word;
-                        currentTranslation = rows[0].translation;
-                        console.log(currentTranslation);
-                        connection.release();
-                      });
-  });
-
+  loadRandomWord();
 });
 
 app.post('/newword', (req, res) => {
@@ -63,22 +63,17 @@ app.post('/newword', (req, res) => {
                         });
     }
   });
-  res.send('/newword.html');
+  res.send('');
 });
 
-app.post('/test', (req, res) => {
-  pool.getConnection((err, connection) => {
-    if(err) {
-      consol.log(err);
-    }
+app.get('/api/getword', (req, res) => {
+  loadRandomWord();
+  setTimeout(() => {res.send(currentWord);}, 1000);
+});
 
-    if (req.body.word !== "" && req.body.translation !== "") {
-    connection.query(`INSERT INTO words (word, translation, repetitions, correct)
-                      VALUES ('${req.body.word}', '${req.body.translation}', 0, 0)`, (err, rows) => {
-                        console.log(err);
-                        connection.release();
-                      });
-    }
-  });
-  res.send('/test.html');
+app.post('/api/checkAnswer', (req, res) => {
+  if (req.body.answer === currentTranslation) {
+    res.send('ПРАВИЛЬНО!');
+  }
+  res.send('ПОПРОБУЙ ЕЩЕ РАЗОК!!!');
 });
