@@ -11,11 +11,11 @@ function request(url, data, method) {
 }
 
 function loadWord() {
-  const word = request('http://127.0.0.1:3000/api/getword', '', 'get');
+  const word = request('http://typing-quiz.herokuapp.com/api/getword', '', 'get');
   return word;
 }
 
 function checkAnswer(answer) {
-  const response = request('http://127.0.0.1:3000/api/checkAnswer', `{"answer": "${answer}"}`, 'post');
+  const response = request('http://typing-quiz.herokuapp.com/api/checkAnswer', `{"answer": "${answer}"}`, 'post');
   return response;
 }
