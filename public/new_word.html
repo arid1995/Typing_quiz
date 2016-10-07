@@ -5,12 +5,15 @@
   </title>
 </head>
 <body>
-  Версия 0.0.1
-  <a href="test.html">Тест</a>
-  <script src="main.js"></script>
+  <h3 id=version-line></h3>
+  <a href="test.html">Test</a>
+  <script src="js/main.js"></script>
   <form method="post" action="/newword">
     <input type="text" name="word">
     <input type="text" name="translation">
-    <button name="submit" onclick="sendRequest()">Проверить</button>
+    <button name="submit" onclick="sendRequest()">Check</button>
+    <script>
+      document.getElementById('version-line').innerHTML = getVersion();
+    </script>
 </body>
 </html>

@@ -5,13 +5,17 @@
   </title>
 </head>
 <body>
-  <h3 id=version-line></h3>
   <script src="js/main.js"></script>
+  <h3 id=version-line></h3>
   <a href="test.html">Test</a>
   <a href="new_word.html">New word</a>
-  <a href="table.html">Table</a>
+
+  <table id="word-table">
+  </table>
+
   <script>
     document.getElementById('version-line').innerHTML = getVersion();
   </script>
+  <script src="js/populateTable.js"></script>
 </body>
 </html>
