@@ -6,39 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Typing quiz</title>
 <link rel="stylesheet" href="css/bootstrap.css">
+<script src="./js/server_side_logic/requests.js"></script>
 </head>
 <body>
 
-<div class="js-navbar"></div>
+  <div class="js-navbar"></div>
+  <script src="/components/navbar/navbar.tmpl.js"></script>
+  <script src="/components/navbar/navbar.js"></script>
 
-<script src="/components/navbar/navbar.tmpl.js"></script>
-<script src="/components/navbar/navbar.js"></script>
-
-<section>
-  <div class="jumbotron text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs12">
-          <h1>X Reviews availible</h1>
-<p><a class="btn btn-primary btn-lg" href="http://typing-quiz.herokuapp.com/test.html" role="button">Review!»</a></p>
+  <section>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs12">
+            <h1>X Reviews availible</h1>
+              <p><a class="btn btn-primary btn-lg" href="http://typing-quiz.herokuapp.com/test.html" role="button">Review!»</a></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<footer class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p>Copyright © MyCompany. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.3.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.js"></script>
+  </section>
+
+  <div class="js-footer"></div>
+  <script src="/components/footer/footer.tmpl.js"></script>
+  <script src="/components/footer/footer.js"></script>
+
+  <script src="js/client_side_logic/jquery-1.11.3.min.js"></script>
+  <script src="js/client_side_logic/bootstrap.js"></script>
 </body>
 <script src="./common.js"></script>
 </html>

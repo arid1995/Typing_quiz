@@ -32,7 +32,7 @@ app.get('/api/getword', (req, res) => {
 });
 
 app.post('/api/checkAnswer', (req, res) => {
-  if (req.body.answer === currentWord.translation) {
+  if (req.body.answer.toLowerCase() === currentWord.translation.toLowerCase()) {
     res.send('ПРАВИЛЬНО!');
   }
   console.log(currentWord.translation);

@@ -7,20 +7,21 @@
 <title>TypeQuiz</title>
 
 <link rel="stylesheet" href="css/bootstrap.css">
+<script src="./js/server_side_logic/requests.js"></script>
 </head>
 <body>
-  <div class="js-navbar"></div>
 
+  <div class="js-navbar"></div>
   <script src="/components/navbar/navbar.tmpl.js"></script>
   <script src="/components/navbar/navbar.js"></script>
 
   <section>
   	<div class="container">
   		<div class="row">
-              <form method="post" action="/newword">
+            <form method="post" action="/newword">
               <input name="word" type="text">
               <input name="translation" type="text">
-              <button name="submit" onclick="sendRequest()">Добавить</button>
+              <button name="submit" onclick="">Добавить</button>
               <script>
                 document.getElementById('version-line').innerHTML = getVersion();
               </script>
@@ -28,19 +29,12 @@
       <div class="row"> <p> </p>
       </div>
 
-  <footer class="text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <p>Copyright © MyCompany. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.js"></script>
+  <div class="js-footer"></div>
+  <script src="/components/footer/footer.tmpl.js"></script>
+  <script src="/components/footer/footer.js"></script>
+
+  <script src="js/client_side_logic/jquery-1.11.3.min.js"></script>
+  <script src="js/client_side_logic/bootstrap.js"></script>
 </body>
-  <script src="common.js"></script>
+<script src="./common.js"></script>
 </html>

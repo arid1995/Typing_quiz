@@ -23,7 +23,7 @@ let loadRandomWord = function(callback) {
 }
 
 let addNewWord = function(word) {
-  pool.getConnection((err, connection) => {
+  pool.pool.getConnection((err, connection) => {
     if (err) {
       return;
     }

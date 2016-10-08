@@ -7,6 +7,7 @@
 <title>TypeQuiz</title>
 
 <link rel="stylesheet" href="css/bootstrap.css">
+<script src="./js/server_side_logic/requests.js"></script>
 </head>
 <body>
   <div class="js-navbar"></div>
@@ -16,32 +17,21 @@
 
 <section>
 	<div class="container">
+    <h3 id="word"></h3>
 		<div class="row">
-            <input name="translation" id="translation" type="text">
-            <button name="submit" onclick="">Test</button>
-          	<h1 id="answer"></h1>
-          	<script>
-            document.getElementById('checkForm').addEventListener('submit', (e) => {
-              e.preventDefault();
-              let answer = checkAnswer(document.getElementById('translation').value);
-            document.getElementById('answer').innerHTML = answer;});
-            document.getElementById('version-line').innerHTML = getVersion();
-          </script>
+      <form id="checkForm">
+        <input name="translation" id="translation" type="text">
+        <button name="submit" onclick="">Test</button>
+      	<h1 id="answer"></h1>
   		</div>
 
- <footer class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p>Copyright © MyCompany. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.3.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.js"></script>
+  <div class="js-footer"></div>
+  <script src="/components/footer/footer.tmpl.js"></script>
+  <script src="/components/footer/footer.js"></script>
+
+  <script src="js/client_side_logic/jquery-1.11.3.min.js"></script>
+  <script src="js/client_side_logic/bootstrap.js"></script>
 </body>
 <script src="./common.js"></script>
+<script src="./js/client_side_logic/testApi.js"></script>
 </html>

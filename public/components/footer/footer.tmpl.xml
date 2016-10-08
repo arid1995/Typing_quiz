@@ -1,0 +1,11 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
+  <footer class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Copyright © MyCompany. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</fest:template>

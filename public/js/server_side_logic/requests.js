@@ -1,3 +1,4 @@
+(function() {
 const host = 'http://typing-quiz.herokuapp.com/'
 
 function request(url, data, method) {
@@ -12,22 +13,30 @@ function request(url, data, method) {
   return xhr.responseText;
 }
 
-function loadWord() {
+const loadWord = function() {
   const word = request(host + 'api/getword', '', 'get');
   return word;
 }
 
-function checkAnswer(answer) {
+const checkAnswer = function(answer) {
   const response = request(host + 'api/checkAnswer', `{"answer": "${answer}"}`, 'post');
   return response;
 }
 
-function getVersion() {
+const getVersion = function() {
   const response = request(host + 'api/version', '', 'get');
   return response;
 }
 
-function getAllWords() {
+const getAllWords = function () {
   const response = request(host + 'api/allwords', '', 'get');
   return response;
 }
+
+window.requests = {
+  loadWord,
+  checkAnswer,
+  getVersion,
+  getAllWords
+};
+})();

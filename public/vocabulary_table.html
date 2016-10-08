@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Portfolio template</title>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Portfolio template</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="./js/server_side_logic/requests.js"></script>
 </head>
 <body>
 
 <div class="js-navbar"></div>
-
 <script src="/components/navbar/navbar.tmpl.js"></script>
 <script src="/components/navbar/navbar.js"></script>
-
 
 <section>
 	<div class="container">
@@ -27,50 +25,19 @@
         </div>
 
   <div class="row">
-  <ul class="single-character-grid">
-
-    	<li class="character-item" id="radical-57">
-      		<span class="item-badge" lang="ja"></span>
-      		<span class="character" lang="ja">子</span>
-      	<ul>
-        	<li>Ko</li>
-        	<li>Child</li>
-       </ul></li><br>
-	<li class="character-item" id="radical-166">
-      <span class="item-badge" lang="ja"></span>
-      <span class="character" lang="ja">牛</span>
-      <ul>
-        <li>Ushi;</li>
-        <li>Cow</li>
-      </ul>
-
-
-    <li class="character-item" id="radical-166">
-      <span class="item-badge" lang="ja"></span>
-      <span class="character" lang="ja">牛</span>
-      <ul>
-        <li>Ushi;</li>
-        <li>Cow</li>
-      </ul> </ul>
-     </div>
-
+    <center>
+      <table class="word-table"></table>
+    </center>
 	</div>
-</section>
-    <footer class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p>Copyright © MyCompany. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.3.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.js"></script>
+  </section>
+
+  <div class="js-footer"></div>
+  <script src="/components/footer/footer.tmpl.js"></script>
+  <script src="/components/footer/footer.js"></script>
+
+  <script src="js/client_side_logic/jquery-1.11.3.min.js"></script>
+  <script src="js/client_side_logic/bootstrap.js"></script>
 </body>
-
 <script src="./common.js"></script>
-
+<script src="./js/client_side_logic/populateTable.js"></script>
 </html>

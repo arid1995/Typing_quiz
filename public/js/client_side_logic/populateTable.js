@@ -1,6 +1,9 @@
+(function() {
+const getAllWords = window.requests.getAllWords;
+
 let allWords = JSON.parse(getAllWords());
 
-let table = document.getElementById('word-table');
+let table = document.querySelector('.word-table');
 
 for(let i = 0; i < allWords.length; i++) {
   let row = document.createElement('tr');
@@ -15,3 +18,4 @@ for(let i = 0; i < allWords.length; i++) {
 
   table.appendChild(row);
 }
+})();
