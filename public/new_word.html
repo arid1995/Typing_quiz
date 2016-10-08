@@ -1,19 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>
-    Quiz app
-  </title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TypeQuiz</title>
+
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-  <h3 id=version-line></h3>
-  <a href="test.html">Test</a>
-  <script src="js/main.js"></script>
-  <form method="post" action="/newword">
-    <input type="text" name="word">
-    <input type="text" name="translation">
-    <button name="submit" onclick="sendRequest()">Check</button>
-    <script>
-      document.getElementById('version-line').innerHTML = getVersion();
-    </script>
+  <div class="js-navbar"></div>
+
+  <script src="/components/navbar/navbar.tmpl.js"></script>
+  <script src="/components/navbar/navbar.js"></script>
+
+  <section>
+  	<div class="container">
+  		<div class="row">
+              <form method="post" action="/newword">
+              <input name="word" type="text">
+              <input name="translation" type="text">
+              <button name="submit" onclick="sendRequest()">Добавить</button>
+              <script>
+                document.getElementById('version-line').innerHTML = getVersion();
+              </script>
+  			</form>
+      <div class="row"> <p> </p>
+      </div>
+
+  <footer class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Copyright © MyCompany. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.js"></script>
 </body>
+  <script src="common.js"></script>
 </html>

@@ -1,17 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>
-    Quiz app
-  </title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typing quiz</title>
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-  <h3 id=version-line></h3>
-  <script src="js/main.js"></script>
-  <a href="test.html">Test</a>
-  <a href="new_word.html">New word</a>
-  <a href="table.html">Table</a>
-  <script>
-    document.getElementById('version-line').innerHTML = getVersion();
-  </script>
+
+<div class="js-navbar"></div>
+
+<script src="/components/navbar/navbar.tmpl.js"></script>
+<script src="/components/navbar/navbar.js"></script>
+
+<section>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs12">
+          <h1>X Reviews availible</h1>
+<p><a class="btn btn-primary btn-lg" href="http://typing-quiz.herokuapp.com/test.html" role="button">Review!»</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © MyCompany. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
 </body>
+<script src="./common.js"></script>
 </html>

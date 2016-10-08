@@ -3,12 +3,13 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const queries = require('./utils/database/queries');
+const fest = require('fest');
 
 var currentWord = {};
 
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static('public', {index: 'index.html'}));
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`App started on port ${process.env.PORT || 3000}`);
@@ -40,7 +41,7 @@ app.post('/api/checkAnswer', (req, res) => {
 });
 
 app.get('/api/version', (req, res) => {
-  res.send('Version 0.0.3')
+  res.send('Version 0.0.4')
 })
 
 app.get('/api/allwords', (req, res) => {

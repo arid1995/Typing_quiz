@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/frontend-park-mail-ru/Typing_quiz.git"
   },
+  "scripts": {
+    "fest": "./node_modules/.bin/fest-build --dir=./public/components"
+  },
   "engines": {
     "node": "6.3.1"
   },
@@ -16,5 +19,8 @@
     "mysql": "^2.11.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "fest": "^0.12.1"
   }
 }
