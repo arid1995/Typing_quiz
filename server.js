@@ -3,7 +3,6 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const queries = require('./utils/database/queries');
-const fest = require('fest');
 
 var currentWord = {};
 
