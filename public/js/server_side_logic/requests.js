@@ -1,5 +1,5 @@
 (function() {
-const host = 'http://eekone.ddns.net/'
+const host = 'http://127.0.0.1:3000/'
 
 function request(url, data, method) {
   const xhr = new XMLHttpRequest();

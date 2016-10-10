@@ -3,6 +3,7 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const queries = require('./utils/database/queries');
+const PORT = 3000;
 
 var currentWord = {};
 
@@ -10,8 +11,8 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(express.static('public', {index: 'index.html'}));
 
-app.listen(process.env.PORT || 80, () => {
-  console.log(`App started on port ${process.env.PORT || 80}`);
+app.listen(PORT, () => {
+  console.log(`App started on port ${PORT}`);
 
   queries.loadRandomWord((rows) => {
     currentWord = rows[0];
@@ -33,14 +34,14 @@ app.get('/api/getword', (req, res) => {
 
 app.post('/api/checkAnswer', (req, res) => {
   if (req.body.answer.toLowerCase() === currentWord.translation.toLowerCase()) {
-    res.send('ПРАВИЛЬНО!');
+    res.send('{"correct":"1"}');
   }
-  console.log(currentWord.translation);
-  res.send('ПОПРОБУЙ ЕЩЕ РАЗОК!!!');
+  console.log(req.body.answer);
+  res.send('{"correct":"0"}');
 });
 
 app.get('/api/version', (req, res) => {
-  res.send('Version 0.0.4')
+  res.send('Version 0.0.5')
 })
 
 app.get('/api/allwords', (req, res) => {
