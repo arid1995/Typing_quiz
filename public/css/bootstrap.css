@@ -6758,24 +6758,3 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
-ul.single-character-grid {      
-      display: flex;     
-      flex-flow: row wrap;  
-      justify-content:space-between;
-      }  
-    ul.single-character-grid li.character-item {
-      box-sizing: border-box;  
-      border-left: 1px solid #4b4d4b;      
-      width:initial; 
-      flex-grow: 1;
-      padding:0;
-    }
-    ul.single-character-grid li.character-item span.character {
-      font-size: 22px;
-      display: block;
-      width:initial;          
-    }
-
-    ul.single-character-grid li.character-item ul {white-space: nowrap;}
-   

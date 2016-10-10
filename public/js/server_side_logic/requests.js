@@ -1,5 +1,5 @@
 (function() {
-const host = 'http://typing-quiz.herokuapp.com/'
+const host = 'http://eekone.ddns.net/'
 
 function request(url, data, method) {
   const xhr = new XMLHttpRequest();

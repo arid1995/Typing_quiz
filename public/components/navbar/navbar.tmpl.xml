@@ -3,14 +3,14 @@
     <div class="container">
      	<div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myDefaultNavbar1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="http://typing-quiz.herokuapp.com/">TQ</a>
+        <a class="navbar-brand" href="http://eekone.ddns.net/">TQ</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="myDefaultNavbar1">
         <ul class="nav navbar-nav">
-          <li><a href="http://typing-quiz.herokuapp.com/vocabulary_table.html">Vocab</a></li>
-          <li><a href="http://typing-quiz.herokuapp.com/new_word.html">Add word</a></li>
-          <li><a href="http://typing-quiz.herokuapp.com/test.html">Test</a></li>
+          <li><a href="http://eekone.ddns.net/vocabulary_table.html">Vocab</a></li>
+          <li><a href="http://eekone.ddns.net/new_word.html">Add word</a></li>
+          <li><a href="http://eekone.ddns.net/test.html">Test</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
